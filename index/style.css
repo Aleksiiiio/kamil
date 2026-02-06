@@ -1,0 +1,74 @@
+*{
+    color: white;
+    font-family: "Play", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+body{
+    background-color: black;
+    margin: 20px;
+}
+
+/* header */
+header{
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    height: 10%;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 5px;
+}
+#logos{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#logo{
+    background:transparent;
+    height: 100%;
+}
+#samurai{
+    background: transparent;
+    height: 30%;
+    margin-top: 35px;
+}
+#menu{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 70px;
+}
+
+#menu nav{
+    border: #f12627 1px solid;
+    padding: 10px 20px 10px 20px;
+}
+#menu nav:hover{
+    border: #f12627 1px solid;
+    background-color: #f12627;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    cursor:pointer;
+}
+
+/* main */
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+/* banner */
+
+#banner {
+    background-image: url("samuraiconcert.gif");
+    background-size:cover;
+    height: 700px;
+    border-radius: 30px;
+}
