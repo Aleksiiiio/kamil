@@ -23,8 +23,17 @@
       </div>
       <nav id="menu">
         <a href="#musicarticle">muzyka</a>
-        <a href="#">członkowie ⮟</a>
-        <a href="#">newsletter</a>
+        <div class="dropdown">
+          <button class="membersmenu">członkowie ⮟</button>
+          <div class="dropdown-content">
+            <a href="#johnny">johnny</a>
+            <a href="#kerry">kerry</a>
+            <a href="#nancy">nancy</a>
+            <a href="#denny">denny</a>
+            <a href="#henry">henry</a>
+          </div>
+        </div>
+        <a href="#newsletter">newsletter</a>
       </nav>
     </header>
     <main>
@@ -66,37 +75,99 @@
       </article>
       <section id="songs">
         <div class="card">
-          <img src="neverfadeaway.jpg" />
-          <div class="card__head">Never Fade Away</div>
+          <img src="neverfadeaway.jpg" alt="neverfadeaway" />
         </div>
         <div class="card">
-          <img src="chippinin.jpg" />
-          <div class="card__head">Chippin' In</div>
+          <img src="chippinin.jpg" alt="chippinin" />
         </div>
         <div class="card">
-          <img src="theballad.jpg" />
-          <div class="card__head">The Ballad of Buck Ravers</div>
+          <img src="theballad.jpg" alt="theballad" />
         </div>
         <div class="card">
-          <img src="archangel.jpg" />
-          <div class="card__head">Archangel</div>
+          <img src="archangel.jpg" alt="archangel" />
         </div>
         <div class="card">
-          <img src="blackdog.jpg" />
-          <div class="card__head">Black Dog</div>
+          <img src="blackdog.jpg" alt="blackdog" />
         </div>
         <div class="card">
-          <img src="alikesupreme.jpg" />
-          <div class="card__head">A Like Supreme</div>
+          <img src="alikesupreme.jpg" alt="alikesupreme" />
         </div>
       </section>
       <section id="songinfo">
         <img src="neverfadeaway.jpg" alt="neverfadeaway" />
         <div id="songdescription">
           <p>Never Fade Away</p>
-          <p>Napisany i skomponowany przez Johnny'ego Silverhanda utwór „Never Fade Away” był częścią jego solowego albumu z 2013 roku, „A Cool Metal Fire”, wydanego przez wytwórnię Universal Media. Jakiś czas później wydał ten utwór ponownie na albumie zatytułowanym „Never Fade Away”. Ostatecznie, po reaktywacji Samurai, nagrano kolejną wersję z resztą zespołu.</p>
+          <p>
+            Napisany i skomponowany przez Johnny'ego Silverhanda utwór „Never
+            Fade Away” był częścią jego solowego albumu z 2013 roku, „A Cool
+            Metal Fire”, wydanego przez wytwórnię Universal Media. Jakiś czas
+            później wydał ten utwór ponownie na albumie zatytułowanym „Never
+            Fade Away”. Ostatecznie, po reaktywacji Samurai'a, nagrano kolejną
+            wersję z resztą zespołu.
+          </p>
+        </div>
+      </section>
+      <hr />
+      <section id="members">
+        <div class="member" id="johnny">
+          <img src="johnny.jpg" alt="johnny" />
+          <p>
+            Johnny Silverhand był legendarnym rockerboyem i frontmanem zespołu
+            Samurai. Jego muzyka była agresywnie antykorporacyjna i rewolucyjna.
+            Samurai zyskał ogromną popularność, zanim rozpadł się w 2008 roku.
+            Johnny później kontynuował karierę solową, wydając albumy o
+            zabarwieniu politycznym. Utwory takie jak Chippin' In i Never Fade
+            Away stały się hymnami rebeliantów.
+          </p>
+        </div>
+        <div class="member" id="kerry">
+          <p>
+            Kerry Eurodyne był rockerboyem, wokalistą i gitarzystą w zespole
+            Samurai. Pomógł ukształtować wizję zespołu, by zmieniać świat za
+            pomocą muzyki. Po rozpadzie Samurai, kontynuował karierę solową, z
+            wieloma hitami i platynowymi albumami. Intensywnie koncertował i
+            przez całe życie wywierał wpływ na muzykę rockową.
+          </p>
+          <img src="kerry.jpg" alt="kerry" />
+        </div>
+        <div class="member" id="nancy">
+          <img src="nancy.jpg" alt="nancy" />
+          <p>
+            Nancy Hartley była klawiszowcem zespołu Samurai przed 2008 rokiem.
+            Grała w Samurai u boku Johnny'ego Silverhanda i Kerry Eurodyne.
+            Zespół Samurai rozpadł się, gdy Nancy spędziła siedem miesięcy w
+            więzieniu w 2008 roku. Po wyjściu na wolność przyjęła pseudonim Bes
+            Isis i porzuciła muzykę na rzecz mediów.
+          </p>
+        </div>
+        <div class="member" id="denny">
+          <p>
+            Denny była perkusistką i rockerboyem zespołu Samurai. Grała z
+            Samurai aż do rozpadu zespołu w 2008 roku. Po rozpadzie dołączyła do
+            zespołu Mastermind. Jej kariera muzyczna koncentruje się na jej roli
+            w Samurai i późniejszych projektach.
+          </p>
+          <img src="denny.jpg" alt="denny" />
+        </div>
+        <div class="member" id="henry">
+          <img src="henry.jpg" alt="henry" />
+          <p>
+            Henry był basistą i rockerem zespołu Samurai aż do jego rozpadu w
+            2008 roku. Grał na basie u boku Johnny'ego Silverhanda i reszty
+            zespołu Samurai. Po rozpadzie Samurai porzucił muzykę, aby pracować
+            nad prototypem, co uszkodziło mu mózg. Jego kariera muzyczna
+            koncentruje się na czasie spędzonym w Samurai'u.
+          </p>
         </div>
       </section>
     </main>
+    <hr>
+    <footer id="newsletter">
+        <p>Zapisz się do newslettera</p>
+        <form action="">
+          <input type="email" name="email" id="email">
+          <button type="submit" id="signup">Zapisz się</button>
+        </form>
+    </footer>
   </body>
 </html>
