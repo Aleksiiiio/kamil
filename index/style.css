@@ -111,7 +111,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("samuraiconcert.gif");
+  background-image: url("imgs/samuraiconcert.gif");
   background-size: cover;
   height: 700px;
   border-radius: 30px;
