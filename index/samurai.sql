@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2026 at 02:43 PM
+-- Generation Time: Feb 12, 2026 at 02:47 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -39,11 +39,11 @@ CREATE TABLE `artysta` (
 --
 
 INSERT INTO `artysta` (`id`, `nazwa`, `biografia`, `zdjecie`) VALUES
-(1, 'Johnny Silverhand', 'Johnny Silverhand był legendarnym rockerboyem i frontmanem zespołu Samurai. Jego muzyka była agresywnie antykorporacyjna i rewolucyjna. Samurai zyskał ogromną popularność, zanim rozpadł się w 2008 roku. Johnny później kontynuował karierę solową, wydając albumy o zabarwieniu politycznym. Utwory takie jak Chippin\' In i Never Fade Away stały się hymnami rebeliantów.', 'johnny.jpg'),
-(2, 'Kerry Eurodyne', 'Kerry Eurodyne był rockerboyem, wokalistą i gitarzystą w zespole Samurai. Pomógł ukształtować wizję zespołu, by zmieniać świat za pomocą muzyki. Po rozpadzie Samurai, kontynuował karierę solową, z wieloma hitami i platynowymi albumami. Intensywnie koncertował i przez całe życie wywierał wpływ na muzykę rockową.', 'kerry.jpg'),
-(3, 'Nancy Hartley', 'Nancy Hartley była klawiszowcem zespołu Samurai przed 2008 rokiem. Grała w Samurai u boku Johnny\'ego Silverhanda i Kerry Eurodyne. Zespół Samurai rozpadł się, gdy Nancy spędziła siedem miesięcy w więzieniu w 2008 roku. Po wyjściu na wolność przyjęła pseudonim Bes Isis i porzuciła muzykę na rzecz mediów.', 'nancy.jpg'),
-(4, 'Denny', 'Denny była perkusistką i rockerboyem zespołu Samurai. Grała z Samurai aż do rozpadu zespołu w 2008 roku. Po rozpadzie dołączyła do zespołu Mastermind. Jej kariera muzyczna koncentruje się na jej roli w Samurai\'u i późniejszych projektach.', 'denny.jpg'),
-(5, 'Henry', 'Henry był basistą i rockerem w Samurai\'u aż do jego rozpadu w 2008 roku. Grał na basie u boku Johnny\'ego Silverhanda i reszty zespołu Samurai. Po rozpadzie Samurai porzucił muzykę, aby pracować nad prototypem, co uszkodziło mu mózg. Jego kariera muzyczna koncentruje się na czasie spędzonym w Samurai\'u.', 'henry.jpg');
+(1, 'Johnny Silverhand', 'Johnny Silverhand był legendarnym rockerboyem i frontmanem w Samurai\'u. Jego muzyka była agresywnie antykorporacyjna i rewolucyjna. Samurai zyskał ogromną popularność, zanim rozpadł się w 2008 roku. Johnny później kontynuował karierę solową, wydając albumy o zabarwieniu politycznym. Utwory takie jak Chippin\' In i Never Fade Away stały się hymnami rebeliantów.', 'johnny.jpg'),
+(2, 'Kerry Eurodyne', 'Kerry Eurodyne był rockerboyem, wokalistą i gitarzystą w Samurai\'u. Pomógł ukształtować wizję zespołu, by zmieniać świat za pomocą muzyki. Po rozpadzie Samurai\'a, kontynuował karierę solową, z wieloma hitami i platynowymi albumami. Intensywnie koncertował i przez całe życie wywierał wpływ na muzykę rockową.', 'kerry.jpg'),
+(3, 'Nancy Hartley', 'Nancy Hartley była klawiszowcem w Samurai\'u przed 2008 rokiem. Grała w nim u boku Johnny\'ego Silverhanda i Kerry\'ego Eurodyne\'a. Zespół Samurai rozpadł się, gdy Nancy spędziła siedem miesięcy w więzieniu w 2008 roku. Po wyjściu na wolność przyjęła pseudonim Bes Isis i porzuciła muzykę na rzecz mediów.', 'nancy.jpg'),
+(4, 'Denny', 'Denny była perkusistką i rockerboyem w Samurai\'u. Grała w nim aż do rozpadu zespołu w 2008 roku. Po rozpadzie dołączyła do zespołu Mastermind. Jej kariera muzyczna koncentruje się na jej roli w Samurai\'u i późniejszych projektach.', 'denny.jpg'),
+(5, 'Henry', 'Henry był basistą i rockerem w Samurai\'u aż do jego rozpadu w 2008 roku. Grał na basie u boku Johnny\'ego Silverhanda i reszty zespołu Samurai. Po rozpadzie Samurai\'a porzucił muzykę, aby pracować nad prototypem, co uszkodziło mu mózg. Jego kariera muzyczna koncentruje się na czasie spędzonym w Samurai\'u.', 'henry.jpg');
 
 -- --------------------------------------------------------
 

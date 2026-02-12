@@ -348,12 +348,12 @@ article {
 #songinfo p:nth-child(1) {
   font-size: 50px;
   text-decoration: none;
+  font-weight: bold;
   margin-bottom: 0px;
   color: #f12627;
 }
 #songinfo p:nth-child(2) {
   font-size: 25px;
-  font-weight: bold;
   text-decoration: none;
   color: #f12627;
 }
