@@ -137,7 +137,7 @@ if(!$db){
                       echo 'title.textContent = "'.$row['songname'].'";';
                       echo 'authors.textContent = "'.$row['artistnames'].'";';
                       echo 'description.textContent = "'.$row['description'].'";';
-                      echo "}";
+                      echo "}\n";
                     }
                   ?>
             });
@@ -146,56 +146,25 @@ if(!$db){
       </section>
       <hr />
       <section id="members">
-        <div class="member" id="johnny">
-          <img src="imgs/johnny.jpg" alt="johnny" />
-          <p>
-            Johnny Silverhand był legendarnym rockerboyem i frontmanem zespołu
-            Samurai. Jego muzyka była agresywnie antykorporacyjna i rewolucyjna.
-            Samurai zyskał ogromną popularność, zanim rozpadł się w 2008 roku.
-            Johnny później kontynuował karierę solową, wydając albumy o
-            zabarwieniu politycznym. Utwory takie jak Chippin' In i Never Fade
-            Away stały się hymnami rebeliantów.
-          </p>
-        </div>
-        <div class="member" id="kerry">
-          <p>
-            Kerry Eurodyne był rockerboyem, wokalistą i gitarzystą w zespole
-            Samurai. Pomógł ukształtować wizję zespołu, by zmieniać świat za
-            pomocą muzyki. Po rozpadzie Samurai, kontynuował karierę solową, z
-            wieloma hitami i platynowymi albumami. Intensywnie koncertował i
-            przez całe życie wywierał wpływ na muzykę rockową.
-          </p>
-          <img src="imgs/kerry.jpg" alt="kerry" />
-        </div>
-        <div class="member" id="nancy">
-          <img src="imgs/nancy.jpg" alt="nancy" />
-          <p>
-            Nancy Hartley była klawiszowcem zespołu Samurai przed 2008 rokiem.
-            Grała w Samurai u boku Johnny'ego Silverhanda i Kerry Eurodyne.
-            Zespół Samurai rozpadł się, gdy Nancy spędziła siedem miesięcy w
-            więzieniu w 2008 roku. Po wyjściu na wolność przyjęła pseudonim Bes
-            Isis i porzuciła muzykę na rzecz mediów.
-          </p>
-        </div>
-        <div class="member" id="denny">
-          <p>
-            Denny była perkusistką i rockerboyem zespołu Samurai. Grała z
-            Samurai aż do rozpadu zespołu w 2008 roku. Po rozpadzie dołączyła do
-            zespołu Mastermind. Jej kariera muzyczna koncentruje się na jej roli
-            w Samurai i późniejszych projektach.
-          </p>
-          <img src="imgs/denny.jpg" alt="denny" />
-        </div>
-        <div class="member" id="henry">
-          <img src="imgs/henry.jpg" alt="henry" />
-          <p>
-            Henry był basistą i rockerem zespołu Samurai aż do jego rozpadu w
-            2008 roku. Grał na basie u boku Johnny'ego Silverhanda i reszty
-            zespołu Samurai. Po rozpadzie Samurai porzucił muzykę, aby pracować
-            nad prototypem, co uszkodziło mu mózg. Jego kariera muzyczna
-            koncentruje się na czasie spędzonym w Samurai'u.
-          </p>
-        </div>
+        <?php
+          $query3 = "SELECT id, nazwa, biografia, zdjecie FROM artysta";
+          $result3 = mysqli_query($db,$query3);
+          $i = 0;
+          while ($row = mysqli_fetch_assoc($result3)){
+            if($i % 2 == 0){
+              echo '<div class="member" id="'.$row['nazwa'].'">';
+              echo '<img src="imgs/'.$row['zdjecie'].'" alt="'.$row['nazwa'].'"/>';
+              echo '<p>'.$row['biografia'].'</p>';
+              echo '</div>';
+            } else {
+              echo '<div class="member" id="'.$row['nazwa'].'">';
+              echo '<p>'.$row['biografia'].'</p>';
+              echo '<img src="imgs/'.$row['zdjecie'].'" alt="'.$row['nazwa'].'"/>';
+              echo '</div>';
+            }
+            $i++;
+          }
+        ?>
       </section>
     </main>
     <hr>
@@ -210,9 +179,9 @@ if(!$db){
           signup.addEventListener("click", (e)=>{
           <?php
           $email = $_GET['email'];
-          $query3 = "INSERT INTO newsletter(email) VALUES ('$email')";
-          $result = mysqli_query($db, $query3);
-          if($result){
+          $query4 = "INSERT INTO newsletter(email) VALUES ('$email')";
+          $result4 = mysqli_query($db, $query4);
+          if($result4){
             echo 'alert("Dziękujemy za zapisanie się do newslettera!");';
           }
           ?>
