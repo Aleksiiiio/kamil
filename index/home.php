@@ -1,3 +1,14 @@
+<?php
+$db = mysqli_connect("localhost","root","","samurai");
+if(!$db){
+  echo "Nie udało połączyć się z bazą danych";
+  mysqli_close($db);
+}
+?>
+
+
+
+
 <!doctype html>
 <html lang="pl">
   <head>
@@ -37,10 +48,10 @@
       </nav>
     </header>
     <main>
-      <div id="banner">
+      <section id="banner">
         <p>Samurai</p>
         <p>legendarny zespół rockowy, który burzy wieże</p>
-      </div>
+      </section>
       <hr />
       <article id="musicarticle">
         <div id="musicdice">
@@ -74,30 +85,23 @@
         </div>
       </article>
       <section id="songs">
-        <div class="card">
-          <img src="imgs/neverfadeaway.jpg" alt="neverfadeaway" />
-        </div>
-        <div class="card">
-          <img src="imgs/chippinin.jpg" alt="chippinin" />
-        </div>
-        <div class="card">
-          <img src="imgs/theballad.jpg" alt="theballad" />
-        </div>
-        <div class="card">
-          <img src="imgs/archangel.jpg" alt="archangel" />
-        </div>
-        <div class="card">
-          <img src="imgs/blackdog.jpg" alt="blackdog" />
-        </div>
-        <div class="card">
-          <img src="imgs/alikesupreme.jpg" alt="alikesupreme" />
-        </div>
+          <?php
+            $query1 = "SELECT id, nazwa, zdjecie FROM piosenka";
+            $result1 = mysqli_query($db, $query1);
+
+            while($row = mysqli_fetch_assoc($result1)){
+              echo '<div class="card">';
+              echo '<img src="imgs/'.$row['zdjecie'].'" alt="'.$row['nazwa'].'" id="'.$row['id'].'"/>';
+              echo '</div>';
+            }
+          ?>
+          
       </section>
       <section id="songinfo">
-        <img src="imgs/neverfadeaway.jpg" alt="neverfadeaway" />
+        <img src="imgs/neverfadeaway.jpg" alt="neverfadeaway" id="songimg"/>
         <div id="songdescription">
-          <p>Never Fade Away</p>
-          <p>
+          <p id="title">Never Fade Away</p>
+          <p id="description">
             Napisany i skomponowany przez Johnny'ego Silverhanda utwór „Never
             Fade Away” był częścią jego solowego albumu z 2013 roku, „A Cool
             Metal Fire”, wydanego przez wytwórnię Universal Media. Jakiś czas
@@ -106,6 +110,31 @@
             wersję z resztą zespołu.
           </p>
         </div>
+        <script>
+          let images = document.querySelectorAll(".card img")
+          let songimg = document.getElementById("songimg")
+          let title = document.getElementById("title");
+          let description = document.getElementById("description")
+
+          images.forEach(img =>{
+              img.addEventListener('click', (e)=>{
+                  <?php
+                    $query2 = 'SELECT id, nazwa, opis, zdjecie FROM piosenka';
+                    $result2 = mysqli_query($db,$query2);
+
+                    while ($row = mysqli_fetch_assoc($result2)){
+                      echo 'if(e.target.id == "'.$row['id'].'") {';
+                      echo 'songimg.src = "imgs/'.$row['zdjecie'].'";';
+                      echo 'songimg.alt = "'.$row['nazwa'].'";';
+                      echo 'title.textContent = "'.$row['nazwa'].'";';
+                      echo 'description.textContent = "'.$row['opis'].'";';
+                      echo "}";
+                    }
+                  ?>
+            });
+          }) 
+
+          </script>
       </section>
       <hr />
       <section id="members">
