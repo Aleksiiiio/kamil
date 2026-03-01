@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2026 at 02:47 PM
+-- Generation Time: Mar 01, 2026 at 11:44 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `artysta` (
   `id` int(11) NOT NULL,
   `nazwa` varchar(45) NOT NULL,
+  `nazwa_skrot` varchar(45) NOT NULL,
   `biografia` text NOT NULL,
   `zdjecie` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -38,12 +39,12 @@ CREATE TABLE `artysta` (
 -- Dumping data for table `artysta`
 --
 
-INSERT INTO `artysta` (`id`, `nazwa`, `biografia`, `zdjecie`) VALUES
-(1, 'Johnny Silverhand', 'Johnny Silverhand był legendarnym rockerboyem i frontmanem w Samurai\'u. Jego muzyka była agresywnie antykorporacyjna i rewolucyjna. Samurai zyskał ogromną popularność, zanim rozpadł się w 2008 roku. Johnny później kontynuował karierę solową, wydając albumy o zabarwieniu politycznym. Utwory takie jak Chippin\' In i Never Fade Away stały się hymnami rebeliantów.', 'johnny.jpg'),
-(2, 'Kerry Eurodyne', 'Kerry Eurodyne był rockerboyem, wokalistą i gitarzystą w Samurai\'u. Pomógł ukształtować wizję zespołu, by zmieniać świat za pomocą muzyki. Po rozpadzie Samurai\'a, kontynuował karierę solową, z wieloma hitami i platynowymi albumami. Intensywnie koncertował i przez całe życie wywierał wpływ na muzykę rockową.', 'kerry.jpg'),
-(3, 'Nancy Hartley', 'Nancy Hartley była klawiszowcem w Samurai\'u przed 2008 rokiem. Grała w nim u boku Johnny\'ego Silverhanda i Kerry\'ego Eurodyne\'a. Zespół Samurai rozpadł się, gdy Nancy spędziła siedem miesięcy w więzieniu w 2008 roku. Po wyjściu na wolność przyjęła pseudonim Bes Isis i porzuciła muzykę na rzecz mediów.', 'nancy.jpg'),
-(4, 'Denny', 'Denny była perkusistką i rockerboyem w Samurai\'u. Grała w nim aż do rozpadu zespołu w 2008 roku. Po rozpadzie dołączyła do zespołu Mastermind. Jej kariera muzyczna koncentruje się na jej roli w Samurai\'u i późniejszych projektach.', 'denny.jpg'),
-(5, 'Henry', 'Henry był basistą i rockerem w Samurai\'u aż do jego rozpadu w 2008 roku. Grał na basie u boku Johnny\'ego Silverhanda i reszty zespołu Samurai. Po rozpadzie Samurai\'a porzucił muzykę, aby pracować nad prototypem, co uszkodziło mu mózg. Jego kariera muzyczna koncentruje się na czasie spędzonym w Samurai\'u.', 'henry.jpg');
+INSERT INTO `artysta` (`id`, `nazwa`, `nazwa_skrot`, `biografia`, `zdjecie`) VALUES
+(1, 'Johnny Silverhand', 'johnny', 'Johnny Silverhand był legendarnym rockerboyem i frontmanem w Samurai\'u. Jego muzyka była agresywnie antykorporacyjna i rewolucyjna. Samurai zyskał ogromną popularność, zanim rozpadł się w 2008 roku. Johnny później kontynuował karierę solową, wydając albumy o zabarwieniu politycznym. Utwory takie jak Chippin\' In i Never Fade Away stały się hymnami rebeliantów.', 'johnny.jpg'),
+(2, 'Kerry Eurodyne', 'kerry', 'Kerry Eurodyne był rockerboyem, wokalistą i gitarzystą w Samurai\'u. Pomógł ukształtować wizję zespołu, by zmieniać świat za pomocą muzyki. Po rozpadzie Samurai\'a, kontynuował karierę solową, z wieloma hitami i platynowymi albumami. Intensywnie koncertował i przez całe życie wywierał wpływ na muzykę rockową.', 'kerry.jpg'),
+(3, 'Nancy Hartley', 'nancy', 'Nancy Hartley była klawiszowcem w Samurai\'u przed 2008 rokiem. Grała w nim u boku Johnny\'ego Silverhanda i Kerry\'ego Eurodyne\'a. Zespół Samurai rozpadł się, gdy Nancy spędziła siedem miesięcy w więzieniu w 2008 roku. Po wyjściu na wolność przyjęła pseudonim Bes Isis i porzuciła muzykę na rzecz mediów.', 'nancy.jpg'),
+(4, 'Denny', 'denny', 'Denny była perkusistką i rockerboyem w Samurai\'u. Grała w nim aż do rozpadu zespołu w 2008 roku. Po rozpadzie dołączyła do zespołu Mastermind. Jej kariera muzyczna koncentruje się na jej roli w Samurai\'u i późniejszych projektach.', 'denny.jpg'),
+(5, 'Henry', 'henry', 'Henry był basistą i rockerem w Samurai\'u aż do jego rozpadu w 2008 roku. Grał na basie u boku Johnny\'ego Silverhanda i reszty zespołu Samurai. Po rozpadzie Samurai\'a porzucił muzykę, aby pracować nad prototypem, co uszkodziło mu mózg. Jego kariera muzyczna koncentruje się na czasie spędzonym w Samurai\'u.', 'henry.jpg');
 
 -- --------------------------------------------------------
 
@@ -95,22 +96,6 @@ CREATE TABLE `newsletter` (
   `id` int(11) NOT NULL,
   `email` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `newsletter`
---
-
-INSERT INTO `newsletter` (`id`, `email`) VALUES
-(1, 'olekgalu77@gmail.com'),
-(2, 'olekgalu77@gmail.com'),
-(3, ''),
-(4, ''),
-(5, ''),
-(6, ''),
-(7, ''),
-(8, ''),
-(9, ''),
-(10, '');
 
 -- --------------------------------------------------------
 
@@ -187,7 +172,7 @@ ALTER TABLE `artysta_piosenka`
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT for table `piosenka`

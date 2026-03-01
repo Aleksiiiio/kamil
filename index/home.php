@@ -48,6 +48,31 @@ if(!$db){
       <section id="banner">
         <p>Samurai</p>
         <p>legendarny zespół rockowy, który burzy wieże</p>
+        <p>następny koncert za:</p>
+        <p id="nextconcert"></p>
+        <script>
+          let nextconcert = document.getElementById("nextconcert");
+
+          function updateCountdown(){
+            const date = new Date("Aug 7, 2026 17:00:00").getTime();
+            const now = new Date().getTime();
+            let difference = date - now;
+            let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            if (days< 10) days = '0'+days;
+            if (hours< 10) hours = '0'+hours;
+            if (minutes< 10) minutes = '0'+minutes;
+            if (seconds< 10) seconds = '0'+seconds;
+            nextconcert.textContent = days+"d "+hours+"h "+minutes+"m "+seconds+"s ";
+          }
+
+          setInterval(updateCountdown, 1000);
+          updateCountdown();
+
+        </script>
       </section>
       <hr />
       <article id="musicarticle">
@@ -147,12 +172,12 @@ if(!$db){
       <hr />
       <section id="members">
         <?php
-          $query3 = "SELECT id, nazwa, biografia, zdjecie FROM artysta";
+          $query3 = "SELECT id, nazwa, nazwa_skrot, biografia, zdjecie FROM artysta";
           $result3 = mysqli_query($db,$query3);
           $i = 0;
           while ($row = mysqli_fetch_assoc($result3)){
             if($i % 2 == 0){
-              echo '<div class="member" id="'.$row['nazwa'].'">';
+              echo '<div class="member" id="'.$row['nazwa_skrot'].'">';
               echo '<img src="imgs/'.$row['zdjecie'].'" alt="'.$row['nazwa'].'"/>';
               echo '<p>'.$row['biografia'].'</p>';
               echo '</div>';
@@ -180,9 +205,13 @@ if(!$db){
           <?php
           $email = $_GET['email'];
           $query4 = "INSERT INTO newsletter(email) VALUES ('$email')";
-          $result4 = mysqli_query($db, $query4);
-          if($result4){
-            echo 'alert("Dziękujemy za zapisanie się do newslettera!");';
+          if(empty($email)){
+            echo 'alert("Proszę podać email");';
+          } else{
+            $result4 = mysqli_query($db, $query4);
+            if($result4){
+              echo 'alert("Dziękujemy za zapisanie się do newslettera!");';
+            }
           }
           ?>
           })
